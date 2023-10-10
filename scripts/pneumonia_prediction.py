@@ -12,16 +12,14 @@ model = load_model("../models/pneumonia_under_sampling.h5")
 def predict():
     try:
         file = request.files['file']
-        print("file : ", file)
+
         file_path = "temp_image.jpg"
         file.save(file_path)
 
         img = load_image(file_path)
-        print("img : ", img)
 
         processed_image = pre_process(img)
 
-        print("processed image : ", processed_image)
         prediction = model.predict(processed_image)
 
         if prediction > 0.5:

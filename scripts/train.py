@@ -2,7 +2,7 @@ import numpy as np
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 
-def train_cnn(train, train_labels, file)
+def train_cnn(train, train_labels, file):
     model = Sequential()
     model.add(Conv2D(32, (3, 3), activation='relu', input_shape=(128, 128, 1)))
     model.add(MaxPooling2D((2, 2)))

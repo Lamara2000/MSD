@@ -24,4 +24,16 @@ def visualize_samples(images, labels, nb_samples):
         axes[i][1].set_title("PNEUMONIA")
         axes[i][1].axis('off')
 
+    plt.show()
+
+def visualize_samples(images, nb_samples):
+    normal_samples = images[:nb_samples]
+
+    fig, axes = plt.subplots(nb_samples, 1, figsize=(10, 20))
+
+    for i in range(nb_samples):
+        axes[i][0].imshow(normal_samples[i])
+        axes[i][0].set_title("NORMAL")
+        axes[i][0].axis('off')
+
     plt.show() 
