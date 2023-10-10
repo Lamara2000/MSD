@@ -24,3 +24,14 @@ def load_images(folder_path):
 
     
     return images, labels
+
+def load_image(img_path):
+    img_list = []
+    try:
+        img = Image.open(img_path)
+        # resize image
+        img = img.resize((128, 128))
+        img_list.append(img)
+    except Exception as e:
+        print(f"Error loading image {img_path}")
+    return img_list
